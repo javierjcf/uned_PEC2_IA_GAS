@@ -16,7 +16,7 @@ alto.
 gasAnswer(ninguno, [
 	'No tienes GAS. Eres un tio con cabeza. Seguro que sabes cuando darte un capricho y cuamnd no.', 
 	'No tienes GAS. Prueba a comprarte algo hombre. Tu no tienes peligro de caer en GAS.',
-	'No tienes GAS. Enhorabuena. Si quieres comporar algo puedes hacerlo']).
+	'No tienes GAS. Enhorabuena. Si quieres comprar algo puedes hacerlo']).
 
 gasAnswer(bajo, [
 	'Tienes un poco de GAS. No es preocupoante mucha gente le entusiasma su hobby, mientras no vaya a mas no hay problema.',
