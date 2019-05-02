@@ -14,22 +14,22 @@ alto.
 % Hechos sin variable
 % Este predicado relaciona los niveles de GAS con las respuestas a dar
 gasAnswer(ninguno, [
-	'Eres un rio con cabeza. Seguro que sabes cuando darte un capricho y cuamnd no.', 
-	'Prueba a comprarte algo hombre. Tu no tienes peligro de GAS.',
-	'No tienes GAS. Enhorabuena.']).
+	'No tienes GAS. Eres un tio con cabeza. Seguro que sabes cuando darte un capricho y cuamnd no.', 
+	'No tienes GAS. Prueba a comprarte algo hombre. Tu no tienes peligro de caer en GAS.',
+	'No tienes GAS. Enhorabuena. Si quieres comporar algo puedes hacerlo']).
 
 gasAnswer(bajo, [
 	'Tienes un poco de GAS. No es preocupoante mucha gente le entusiasma su hobby, mientras no vaya a mas no hay problema.',
 	'Apenas tienes GAS, no hay problema mientras no vayas a más.',
-	'NO te preocupes, sigue pensando que compras te aportan algo y cuales no.']).
+	'No te preocupes no tienes casi GAS, sigue pensando que compras te aportan algo y cuales no.']).
 gasAnswer(medio, [
 	'Tu nivel de GAS es preocupante. De aquí a despilfarrar el dinero hay un paso. Piensa bien cuando compra.s', 
 	'Tienes bastante GAS, cada vez que hagas una compra intenta que sea algo que te aporte de verdad. Que no acaben las cosas en un cajón.',
-	'Nivel considerable de GAS, tu verás a donde vas.']).
+	'Nivel considerable de GAS, tu verás a donde vas. Piensa bien si necesitas todo lo que compras']).
 gasAnswer(alto, [
 	'Pffff vaya manera de despilfarrar el dinero. No seas tonto anda, padeces de GAS, debes saberlo',
 	'Tienes GAS, no hay mas. Intenta no comprar nada en un año, y vende todo lo que no uses',
-	'Anda cambia de hobby. Este te produce demasiado GAS. Acabaras arruinado-']).
+	'Anda cambia de hobby. Este te produce demasiado GAS. Acabaras arruinado.']).
 
 
 % Hechos con variables dinamicas
@@ -117,7 +117,7 @@ question(5):-nl,tab(5),write('Alguna vez has pasado problemas economicos por cul
 
 % Este predicado devuelve uno de los grados de GAS existentes en función de la puntuación obtenida
 gasGrade(Num, Grade):-
-	Num=<50,Num>=250,Grade=ninguno;
+	Num<250,Grade=ninguno;
 	Num>=250,Num<500,Grade=bajo;
 	Num>=500,Num<1500,Grade=medio;
 	Num>=1500,Grade=alto.
@@ -128,19 +128,26 @@ randomAnswer(List, Answer):-length(List, Length), Idx is random(Length), nth0(Id
 % Esta función , para cada tipo de grado elegirá uno al azar de la lista
 persuadeByGrade(Grade):- gasAnswer(Grade, List), randomAnswer(List, Answer), nl, write(Answer).
 
+% Le las posibles opciones de repetir o no el test
+option(s):- clearPointList, menu.
+option(n):- halt.
+option(_):- nl, write('Por favor, escriba s o n: '), restart.
+
+% PAra volver al menu inicial una vez finalizado el test o salir
+restart:- nl,write('Quiere volver al menu principal s/n?: '),read(R),option(R).
+
 % Obtiene el consejo a dar al usuario en función del nivel de gas obtenido como resultado del test así como el número de puntos
 getResult:- pointList(Points), sum(Points, Result),
             clearScreen, write('Has obtenido '),write(Result), write(' puntos '), 
-            gasGrade(Result, Grade), persuadeByGrade(Grade).
+            gasGrade(Result, Grade), persuadeByGrade(Grade), restart.
 
 startTest:- question(1), question(2), question(3), question(4), question(5), 
             getResult.
 
-
 % Acciones según respuestas del menú
 action(1):- clearScreen, startTest.
 action(2):- clearScreen.
-action(3):- clearPointList, clearScreen.
+action(3):- halt.
 
 % Menu de incio del programa, con las opciones elegidas */
 menu:-clearScreen,
