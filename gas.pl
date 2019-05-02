@@ -19,7 +19,7 @@ gasAnswer(ninguno, [
 	'No tienes GAS. Enhorabuena. Si quieres comprar algo puedes hacerlo']).
 
 gasAnswer(bajo, [
-	'Tienes un poco de GAS. No es preocupoante, mucha gente le entusiasma su hobby, mientras no vaya a mas no hay problema.',
+	'Tienes un poco de GAS. No es preocupante, mucha gente le entusiasma su hobby, mientras no vaya a mas no hay problema.',
 	'Apenas tienes GAS, no hay problema mientras no vayas a mas.',
 	'No te preocupes no tienes casi GAS, sigue pensando que compras te aportan algo y cuales no.']).
 gasAnswer(medio, [
@@ -74,7 +74,7 @@ processOption(R,Current):-
                   
 
 % Se inicializan las preguntas
-question(1):-nl,tab(5),write('En relaccion a tus ingresos cuanto dinero crees que gastas al mes de media?'),nl,
+question(1):-nl,tab(5),write('En relacion a tus ingresos cuanto dinero crees que gastas al mes de media?'),nl,
 	tab(10),write('1) Menos del 5% del salario'),nl,
 	tab(10),write('2) Entre el 5% y el 10%'),nl,
 	tab(10),write('3) Entre el 10% y el 15%'),nl,
@@ -102,14 +102,14 @@ question(4):-nl,tab(5),write('Te arrepientes de cosas que compraste y ya no usas
 	tab(10),write('1) No, no tengo nada que no use'),nl,
 	tab(10),write('2) No, suelo vender lo que ya no uso.'),nl,
 	tab(10),write('3) Si, hay cosas en las que gaste mucho dinero y no las aprovecho.'),nl,
-	tab(10),write('4) ¿Como quieres que use todo lo que compro? estamos loqos o que.'),nl,
+	tab(10),write('4) ¿Como quieres que use todo lo que compro? estamos locos o que.'),nl,
 	nl,nl,tab(5),write('Elija una de las opciones(Recuerde terminar en punto): '),read(Y),
 	processOption(Y, 4).
 
 question(5):-nl,tab(5),write('Alguna vez has pasado problemas economicos por culpa de adquirir equipo para tu hobby?'),nl,
 	tab(10),write('1) No, no gasto mas de lo que puedo y siempre ahorro'),nl,
-	tab(10),write('2) No, algun mes me tuve que apretar el cinturon para darme el capriho, pero nunca me a faltadfo dinero.'),nl,
-	tab(10),write('3) Tenfo que pedir prestado a veces.'),nl,
+	tab(10),write('2) No, algun mes me tuve que apretar el cinturon para darme el capricho, pero nunca me a faltado dinero.'),nl,
+	tab(10),write('3) Tengo que pedir prestado a veces.'),nl,
 	tab(10),write('4) Estoy endeudado hasta las cejas, pero tengo muchas cosas, puedo venderlas si no quueda mas remedio.'),nl,
 	nl,nl,tab(5),write('Elija una de las opciones(Recuerde terminar en punto): '),read(Y),
 	processOption(Y, 5).
