@@ -14,16 +14,16 @@ alto.
 % Hechos sin variable
 % Este predicado relaciona los niveles de GAS con las respuestas a dar
 gasAnswer(ninguno, [
-	'No tienes GAS. Eres un tio con cabeza. Seguro que sabes cuando darte un capricho y cuamnd no.', 
-	'No tienes GAS. Prueba a comprarte algo hombre. Tu no tienes peligro de caer en GAS.',
+	'No tienes GAS. Eres un tio con cabeza. Seguro que sabes cuando darte un capricho y cuando no.', 
+	'No tienes GAS. Prueba a comprarte algo hombre. Tu no tienes peligro de caer en el GAS.',
 	'No tienes GAS. Enhorabuena. Si quieres comprar algo puedes hacerlo']).
 
 gasAnswer(bajo, [
-	'Tienes un poco de GAS. No es preocupoante mucha gente le entusiasma su hobby, mientras no vaya a mas no hay problema.',
-	'Apenas tienes GAS, no hay problema mientras no vayas a más.',
+	'Tienes un poco de GAS. No es preocupoante, mucha gente le entusiasma su hobby, mientras no vaya a mas no hay problema.',
+	'Apenas tienes GAS, no hay problema mientras no vayas a mas.',
 	'No te preocupes no tienes casi GAS, sigue pensando que compras te aportan algo y cuales no.']).
 gasAnswer(medio, [
-	'Tu nivel de GAS es preocupante. De aquí a despilfarrar el dinero hay un paso. Piensa bien cuando compra.s', 
+	'Tu nivel de GAS es preocupante. De aquí a despilfarrar el dinero hay un paso. Piensa bien cuando y que compras', 
 	'Tienes bastante GAS, cada vez que hagas una compra intenta que sea algo que te aporte de verdad. Que no acaben las cosas en un cajón.',
 	'Nivel considerable de GAS, tu verás a donde vas. Piensa bien si necesitas todo lo que compras']).
 gasAnswer(alto, [
